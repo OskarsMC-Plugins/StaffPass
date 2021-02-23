@@ -1,7 +1,7 @@
 name: StaffPass
 version: ${project.version}
 main: com.oskarsmc.staffpass.StaffPass
-api-version: 1.16
+api-version: 1.13
 prefix: StaffPass
 authors: [ OskarsMC, OskarZyg ]
 description: Plugin to give staff members access to the server.
