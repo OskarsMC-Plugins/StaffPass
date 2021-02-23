@@ -1,0 +1,5 @@
+bypass-message: # Shown to staff after joining when server is full
+  enabled: false
+  # `message` is a MiniMessage Formatted String
+  # https://docs.adventure.kyori.net/minimessage.html#the-components
+  message: <white>The server was full, you joined via the staff bypass.</white>
