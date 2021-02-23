@@ -4,6 +4,7 @@ import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -43,7 +44,22 @@ public final class StaffPass extends JavaPlugin implements Listener {
         if (event.getPlayer().hasPermission("staffpass.bypass")) {
             adventure().player(event.getPlayer()).sendMessage(joinMessage);
             event.allow();
+        } else {
+            if (getFreeSlots() > 0) {
+                event.allow();
+            }
         }
+    }
+
+    public int getFreeSlots() {
+        int playerCount = 0;
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            if (player.hasPermission("staffpass.bypass")) {
+            } else {
+                playerCount++;
+            }
+        }
+        return getServer().getMaxPlayers() - playerCount;
     }
 
     public BukkitAudiences adventure() {
