@@ -6,7 +6,7 @@
 
     <groupId>com.oskarsmc</groupId>
     <artifactId>staffpass</artifactId>
-    <version>1.0</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
 
     <name>StaffPass</name>
