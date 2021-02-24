@@ -46,7 +46,9 @@ public final class StaffPass extends JavaPlugin implements Listener {
             event.allow();
         } else {
             if (getFreeSlots() > 0) {
-                event.allow();
+                if (event.getResult() == PlayerLoginEvent.Result.KICK_FULL) {
+                    event.allow();
+                }
             }
         }
     }
