@@ -30,7 +30,7 @@ public final class StaffPass extends JavaPlugin implements Listener {
         joinMessageEnabled = this.getConfig().getBoolean("bypass-message.enabled");
         this.adventure = BukkitAudiences.create(this);
         try {
-            joinMessage = MiniMessage.get().parse(Objects.requireNonNull(this.getConfig().getString("bypass-message.message")));
+            joinMessage = MiniMessage.miniMessage().deserialize(Objects.requireNonNull(this.getConfig().getString("bypass-message.message")));
             Bukkit.getLogger().info("Loaded!");
         } catch (NullPointerException e) {
             e.printStackTrace();
